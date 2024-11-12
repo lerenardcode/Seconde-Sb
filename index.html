@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECONDE SB - Calcul de Moyenne</title>
+    
+    <!-- Empêcher l'indexation par les moteurs de recherche -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Optionnel : Ajouter un favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Liens vers Bootstrap et Font Awesome pour la mise en forme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Style personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Section de connexion -->
+<div id="login-section" class="container text-center mt-5">
+    <div class="login-form mx-auto">
+        <h2 class="mb-4">Accès à SECONDE SB</h2>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" id="class-name" placeholder="Nom de la classe" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            </div>
+            <input type="password" id="password" placeholder="Mot de passe" class="form-control">
+            <div class="input-group-append">
+                <span class="input-group-text" onclick="togglePassword()"><i class="fas fa-eye" id="toggle-icon"></i></span>
+            </div>
+        </div>
+        <button onclick="checkLogin()" class="btn btn-primary btn-block btn-lg">Accéder</button>
+        <p id="login-error" class="text-danger mt-3"></p>
+        <img src="logo.png" alt="Logo" class="mt-4" style="width: 150px; height: auto;">
+    </div>
+</div>
+
+<!-- Section principale (tableau) -->
+<div id="main-section" class="container mt-5" style="display: none;">
+    <h2 class="mb-4 text-center">Calcul de Moyenne - SECONDE SB</h2>
+    
+    <div id="pdf-content">
+        <!-- Contenu à générer en PDF -->
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Discipline</th>
+                    <th>Devoir 1</th>
+                    <th>Devoir 2</th>
+                    <th>Moyenne Devoirs</th>
+                    <th>Note Composition</th>
+                    <th>Moyenne Discipline</th>
+                    <th>Coefficient</th>
+                    <th>Moy x Coef</th>
+                    <th>Appréciation</th>
+                </tr>
+            </thead>
+            <tbody id="subjects-table">
+                <!-- Les lignes des matières seront générées ici par JS -->
+            </tbody>        
+            <tfoot>
+                <tr>
+                    <td colspan="7" class="text-right font-weight-bold">Total Moy x Coef</td>
+                    <td id="total-moy-coef">0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="7" class="text-right font-weight-bold">Moyenne Semestrielle</td>
+                    <td id="semestre-moyenne" colspan="2">0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <button onclick = "resetData()" id="reset-button" class="btn btn-danger btn-lg mt-3">Réinitialiser</button>
+    <button onclick="generatePDF()" class="btn btn-success mt-3 btn-lg">Télécharger en PDF</button>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.12/jspdf.plugin.autotable.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
