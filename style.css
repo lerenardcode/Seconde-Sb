@@ -29,6 +29,11 @@ body {
     color: red;
 }
 
+.text-danger {
+    font-size: 0.9em;
+    color: red;
+}
+
 /* Style des boutons */
 .btn {
     font-size: 1.1em;
@@ -125,8 +130,6 @@ input[type="number"], input[type="text"] {
     font-weight: bold;
 }
 
-
-
 /* Icône de l'œil pour mot de passe */
 #toggle-icon {
     cursor: pointer;
@@ -135,4 +138,113 @@ input[type="number"], input[type="text"] {
 
 #login-section img {
     margin-top: 20px;
+}
+
+/* ========================== Améliorations pour Mobile ========================== */
+
+/* Style général pour les petits écrans */
+@media (max-width: 768px) {
+    /* Arrière-plan et texte */
+    body {
+        font-size: 14px;
+    }
+
+    /* Section de connexion */
+    #login-section {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .login-form {
+        padding: 20px;
+    }
+
+    #login-section h2 {
+        font-size: 1.4em;
+    }
+
+    /* Boutons */
+    .btn {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+
+    /* Table principale */
+    #main-section {
+        width: 100%;
+        margin: 20px 10px;
+    }
+
+    table {
+        font-size: 1em; /* Réduire la taille de la police pour les petits écrans */
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    /* Ajustement du tableau pour les petits écrans */
+    #subjects-table {
+        width: 100%;
+    }
+
+    #subjects-table th, #subjects-table td {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    /* Augmenter la taille des champs d'entrée */
+    #subjects-table input[type="number"],
+    #subjects-table input[type="text"] {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    /* Cacher les éléments non essentiels ou ajuster leur taille */
+    #semestre-moyenne {
+        font-size: 1.2em;
+    }
+
+    /* Icône de l'œil pour mot de passe */
+    #toggle-icon {
+        font-size: 1.2em;
+    }
+
+    /* Adaptation de l'image du login */
+    #login-section img {
+        width: 100%; /* Rendre l'image responsive */
+        margin-top: 10px;
+    }
+}
+
+/* Pour les très petits écrans, comme les téléphones portables */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+
+    .login-form {
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 0.9em;
+        padding: 8px 14px;
+    }
+
+    /* Table principale */
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    #subjects-table input[type="number"],
+    #subjects-table input[type="text"] {
+        font-size: 0.8em;
+        padding: 8px;
+    }
 }
